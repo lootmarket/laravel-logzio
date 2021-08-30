@@ -120,7 +120,7 @@ final class Handler extends AbstractProcessingHandler
      */
     protected function getDefaultFormatter(): FormatterInterface
     {
-        return new Formatter();
+        return new Formatter($options['timestamp_format'] ?? 'c'); // 'c' = ISO-8601 by default
     }
 
     /**

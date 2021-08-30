@@ -31,14 +31,6 @@ class ServiceProvider extends IlluminateServiceProvider
     public function boot()
     {
         Log::extend('logzio', function ($app, array $config) {
-            // $config = [
-            //     'level' => Logger::WARNING,
-            //     'bubble' => true,
-            //     'token' => '...',
-            //     'type' => 'http-bulk',
-            //     'ssl' => true,
-            //     'region' => '',
-            // ];
             $handler = new Handler(
                 $config['level'] ?? 'warning',
                 $config['bubble'] ?? true,
